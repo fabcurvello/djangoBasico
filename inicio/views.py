@@ -5,3 +5,12 @@ def index_inicio(request):
     return render(request, 'index.html')
 
 
+
+
+
+
+
+
+
+
+
