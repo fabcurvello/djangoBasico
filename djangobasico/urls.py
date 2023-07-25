@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('inicio.urls')),
     path('admin/', admin.site.urls),
     path('produtos/', include('produtos.urls')),
     path('clientes/', include('clientes.urls')),
@@ -26,7 +27,19 @@ urlpatterns = [
 
 
 
+'''
+Outra forma para a aplicação inicio: 
+- Não criar o arquivo urls.py na aplicacao inicio
+- Aqui neste arquivo, importar diretamente o método, incluindo no topo deste arquivo:
+from inicio.views import index_inicio
+- O path aqui neste arquivo ficaria assim:
+path('', inicio_index),
 
+- Esta forma é menos indicada nas aplicações, pois, por não termos um arquivo urls.py dentro da aplicação, 
+não podemos termos vários subcaminhos, como /produtos e /produtos/celulares. 
+- Como a página inicial não possui rotas internas (pois estas já são as aplicações, então este exemplo aqui
+só é indicado mesmo neste momento (página inicial)
+'''
 
 
 
