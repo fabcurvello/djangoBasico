@@ -25,9 +25,21 @@
         <td>Notebook HP K34B</td>
         <td>3810.00</td>
       </tr>
+      <tr>
+        <td>{{ produto }}</td>
+        <td>{{ preco }}</td>
+      </tr>
+      {% for item in produtos %}
+        <tr>
+          <td>{{ item.produto }}</td>
+          <td>{{ item.preco }}</td>
+        </tr>
+      {% endfor %}
     </tbody>
 
   </table>
+
+  <p>Total de Smart TVs: {{ produtos|length }}</p>
 
 </body>
 </html>
