@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'produtos.apps.ProdutosConfig',
+    'produtos',
     'clientes.apps.ClientesConfig',
     'inicio.apps.InicioConfig',
 ]
+# Também é possível apontar só o nome da app (ex acima: produtos). Abaixo está o bkp de como estava antes:
+# 'produtos.apps.ProdutosConfig',
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
