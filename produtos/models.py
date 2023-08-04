@@ -7,6 +7,12 @@ class Produto(models.Model):
     preco = models.DecimalField('Preço', decimal_places=2, max_digits=10)
     estoque = models.IntegerField('Quantidade em Estoque')
 
+    def __str__(self):
+        return self.nomenclatura
+
+
+
+
 
 '''
     Criar a classe com o nome desejado para a TAbela no BD. Argumento vem de models.Model.
