@@ -6,3 +6,8 @@ class Cliente(models.Model):
     email = models.EmailField('E-mail', max_length=40)
     nascimento = models.DateField('Data de Nascimento')
 
+    def __str__(self):
+        return self.nome
+
+
+
