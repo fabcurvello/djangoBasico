@@ -19,8 +19,9 @@
     <tbody>
 
         <tr>
-          <td><a href="{% url 'index_produtos' produto.id %}"> {{ item.nomenclatura }} </a></td>
-          <td>{{ item.preco }}</td>
+            <td><a href="{% url 'index_produtos' %}"> {{ item.nomenclatura }} </a></td>
+            <td>{{ item.preco }}</td>
+            <td>{{ item.estoque }}</td>
         </tr>
 
     </tbody>
