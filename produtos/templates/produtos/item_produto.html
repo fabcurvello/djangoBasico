@@ -6,6 +6,9 @@
 </head>
 <body>
 
+<a href="{% url 'index_produtos' %}"> <<< Retornar para Página de Produtos <<<</a>
+<br><br>
+
 <table border="1">
 
     <thead>
@@ -19,7 +22,7 @@
     <tbody>
 
         <tr>
-            <td><a href="{% url 'index_produtos' %}"> {{ item.nomenclatura }} </a></td>
+            <td>{{ item.nomenclatura }}</td>
             <td>{{ item.preco }}</td>
             <td>{{ item.estoque }}</td>
         </tr>

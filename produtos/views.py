@@ -32,7 +32,14 @@ def index_produtos(request):
 
 
 def produto_id(request, id):
-    return render(request, 'produtos/item_produto.html')
+    # print(f"--- ID: {id}")
+    produto = Produto.objects.get(id=id)
+    # print(f"PRODUTO: {produto}")
+
+    context = {
+        'item': produto,
+    }
+    return render(request, 'produtos/item_produto.html', context)
 
 
 def celulares(request):
