@@ -36,6 +36,12 @@
           <td>{{ item.preco }}</td>
         </tr>
       {% endfor %}
+      {% for item in lista_produtos_db %}
+        <tr>
+          <td><a href="{% url 'produto_id' item.id %}"> {{ item.nomenclatura }} </a></td>
+          <td>{{ item.preco }}</td>
+        </tr>
+      {% endfor %}
     </tbody>
 
   </table>

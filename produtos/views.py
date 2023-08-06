@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Produto
 
 # Create your views here.
 def index_produtos(request):
@@ -15,16 +16,24 @@ def index_produtos(request):
     else:
         situacao_usuario = "Usuário Logado"
 
+    produtos_db = Produto.objects.all()
+    print(f"produtos_db: {produtos_db}")
     context = {
+        'lista_produtos_db': produtos_db,
         'produto': 'Tablet iPad', 'preco': '4550.00',
         'logado': situacao_usuario,
         'produtos': [
             {'produto': 'Smart TV LG 70 Polegadas', 'preco': '5250.00'},
             {'produto': 'Smart TV Samsung 50 Polegadas', 'preco': '3000.00'},
             {'produto': 'Smart TV Philips 42 Polegadas', 'preco': '2100.00'},
-        ]
+        ],
     }
     return render(request, 'produtos/index.html', context)
+
+
+def produto_id(request, id):
+    return render(request, 'produtos/item_produto.html')
+
 
 def celulares(request):
     return HttpResponse('Página inicial de Celulares')
