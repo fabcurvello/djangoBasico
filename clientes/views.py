@@ -11,6 +11,11 @@ def index_clientes(request):
     return render(request, 'clientes/index.html', context)
 
 
-
+def cliente_id(request, id):
+    cliente = Cliente.objects.get(id=id)
+    context = {
+        'item': cliente,
+    }
+    return render(request, 'clientes/item_cliente.html', context)
 
 
