@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente {{ item.nome }}</title>
+</head>
+<body>
+
+  <a href="{% url índex_clientes %}"> Retornar para a Página de Clientes</a>
+  <br><br>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Data de Nascimento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ item.nome }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.nascimento }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
