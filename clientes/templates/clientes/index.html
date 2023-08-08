@@ -6,6 +6,27 @@
 </head>
 <body>
     <h1>Lista de clientes</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Nascimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in lista_clientes_db %}
+                <tr>
+                    <td> {{ item.nome }} </td>
+                    <td> {{ item.email }} </td>
+                    <td> {{ item.nascimento }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total de Clientes: {{ lista_clientes_db|length }}</p>
 </body>
 </html>
 
