@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Cliente
 
+
 # Create your views here.
 def index_clientes(request):
     clientes_db = Cliente.objects.all()
