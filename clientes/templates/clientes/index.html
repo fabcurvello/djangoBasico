@@ -18,7 +18,7 @@
         <tbody>
             {% for item in lista_clientes_db %}
                 <tr>
-                    <td> {{ item.nome }} </td>
+                    <td><a href="{% url 'cliente_id' item.id %}"> {{ item.nome }} </a></td>
                     <td> {{ item.email }} </td>
                     <td> {{ item.nascimento }} </td>
                 </tr>
