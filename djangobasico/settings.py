@@ -9,12 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# BASE_DIR copiado do curso de django: (que gerou acima o import os.path
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -23,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b)0yo(7!hnzf*^is@%oe^39nwzn2he%^%rv391u0+b&ol1z^_x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# True para ambiente de Desenvolvimento, False para ambiente de Produção
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -120,7 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'  # usado em ambiente desenvolvimento
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # usado em ambiente produção
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
