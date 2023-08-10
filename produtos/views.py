@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Produto
 
@@ -33,8 +33,10 @@ def index_produtos(request):
 
 def produto_id(request, id):
     # print(f"--- ID: {id}")
-    produto = Produto.objects.get(id=id)
+    # produto = Produto.objects.get(id=id)
     # print(f"PRODUTO: {produto}")
+    produto = get_object_or_404(Produto, id=id)
+
 
     context = {
         'item': produto,
