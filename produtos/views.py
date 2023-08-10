@@ -47,6 +47,7 @@ def produto_id(request, id):
 def celulares(request):
     return HttpResponse('Página inicial de Celulares')
 
+
 def error404(request, exception):
     template = loader.get_template('404.html')
     return HttpResponse(content=template.render(), content_type='text/html; charset=utf8', status=404)
