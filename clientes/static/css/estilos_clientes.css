@@ -1,3 +1,5 @@
+/* estilos.css da app clientes */
+
 body {
     background-color: #333333;
     color: #ffffff;
@@ -9,6 +11,6 @@ a {
 }
 
 img {
-    width: 15px;
+    width: 150px;
 }
 
